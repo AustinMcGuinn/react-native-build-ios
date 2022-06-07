@@ -63,11 +63,11 @@ Open the Keychain Access application on your Mac, then click on 'Keychain Access
 
 For the GitHub action to run, you will need to add these variables to your repository.
 
-#### APP_PROJECT_NAME
+#### `APP_PROJECT_NAME`
 
 Go to your ios folder in your project and its the name that comes before the .xcworkspace and .xcodeproj files.
 
-#### IOS_MOBILE_PROVISION_BASE64
+#### `IOS_MOBILE_PROVISION_BASE64`
 
 Open a terminal in the folder where you downloaded the Profile to and run the following command after changing CHANGE_ME to the name of your file.
 
@@ -75,38 +75,38 @@ Open a terminal in the folder where you downloaded the Profile to and run the fo
   openssl base64 < CHANGE_ME.mobileprovision | tr -d '\n' | tee my-profile.base64.txt
 ```
 
-#### IOS_P12_BASE64
+#### `IOS_P12_BASE64`
 
 1. Open the Certificate file we created earlier in the section 'Create Certificate'.
 2. Open the Keychain Access app ,select "My Certificates" at the top and locate the cetificate we created.
 3. Expand the cerificate to see the corresponding private key.
 4. Select both items, the pight click and choose "Export 2 items...".
 5. Save the file as a .p12 to the folder we created earlier and chose a strong password for the file. Take note of the password as we will need it later.
-6. Run the following command to generate the base64.(Change Certificates.p12 if you renamed the file)
+6. Run the following command to generate the base64(Change Certificates.p12 if you renamed the file).
 
 ```sh
   openssl base64 < Certificates.p12 | tr -d '\n' | tee Certificates.base64.txt
 ```
 
-#### IOS_CERTIFICATE_PASSWORD
+#### `IOS_CERTIFICATE_PASSWORD`
 
 Enter the above password we used while exporting the .p12 file.
 
-#### IOS_TEAM_ID
+#### `IOS_TEAM_ID`
 
-Your Team ID can be found [here](https://developer.apple.com/account/#!/membership/)
+Your Team ID can be found [here](https://developer.apple.com/account/#!/membership/).
 
-#### APPSTORE_ISSUER_ID
+#### `APPSTORE_ISSUER_ID`
 
-Issuer ID can be found [here](https://appstoreconnect.apple.com/access/api)
+Issuer ID can be found [here](https://appstoreconnect.apple.com/access/api).
 
-#### APPSTORE_API_KEY_ID
+#### `APPSTORE_API_KEY_ID`
 
-API KEY ID can be found [here](https://appstoreconnect.apple.com/access/api)
+API KEY ID can be found [here](https://appstoreconnect.apple.com/access/api).
 
-#### APPSTORE_API_PRIVATE_KEY
+#### `APPSTORE_API_PRIVATE_KEY`
 
-Open the file we generated from steps 'Generate App Store API Key' and paste in the whole file contents.
+In a text editor, open the file we generated from steps 'Generate App Store API Key' and paste in the whole file contents.
 
 
 
@@ -114,7 +114,7 @@ Open the file we generated from steps 'Generate App Store API Key' and paste in 
 <!-- TIPS -->
 ## Tips
 
-To get rid of the 'Missing Compliance' warning every time you deploy a build to Testflight, add the following to your Info.plist
+To get rid of the 'Missing Compliance' warning every time you deploy a build to Testflight, add the following to the end of your Info.plist file.
 
 ```js
    <key>ITSAppUsesNonExemptEncryption</key>
