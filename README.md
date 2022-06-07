@@ -8,6 +8,10 @@
   <p align="center">
     GitHub Action to build React Native iOS app and publish to Testflight
   </p>
+  
+  <p align="center">
+    This Action was created based on a blog post which is linked below, but with some alterations and bug fixes.
+  </p>
 </div>
 
 <!-- GETTING STARTED -->
@@ -19,24 +23,24 @@ By using this GitHub Action I already assume you know how to build your React Na
 
 I also recommend making a folder to save files that we will get creating below.
 
-### Get Certificate Request
+### 1) Get Certificate Request
 Open the Keychain Access application on your Mac, then click on 'Keychain Access' top left to open the drop down, go to 'Certificate Assistant' and click 'Request a Certificate From a Certificate Authority'. Check 'Saved to disk' and click Continue. Save the file.
 
-### Create Certificate
+### 2) Create Certificate
 1. Go to [your Apple Developer Dashboard](https://developer.apple.com/account/).
 2. Select 'Certificates, IDs & Profiles' from the sidebar.
 3. Click on Certificates and then the + button beside Certificates. Select Apple Distribution under Software and then Continue. 
 4. Upload the file we created from 'Get Certificate Request'.
 5. Click the Download button.
 
-### Create Identifier
+### 3) Create Identifier
 1. After downloading the file from the steps above, select 'Identifiers' from the side nav and then the + button beside 'Identifiers'.
 2. Select 'App IDs' and then Continue.
 3. Select 'App' as the type and then Continue.
 4. Add a Description and a Bundle ID. You can also select any capabilities your app uses and then Continue.
 5. Once again, select any capabilities your app uses and then Register.
 
-### Create Profile 
+### 4) Create Profile 
 1. Select 'Profiles' from the nav bar and then select the + button beside 'Profiles'.
 2. Select 'App Store' under Distribution and then Continue.
 3. Select the Bundle ID we created in the above steps and then Continue.
@@ -44,7 +48,7 @@ Open the Keychain Access application on your Mac, then click on 'Keychain Access
 5. Add a Provisioning Profile Name and then select Generate.
 6. Click Download.
 
-### Xcode Setup
+### 5) Xcode Setup
 
 1. Open your project in Xcode by using the file ios/XXXX.xcworkspace (not the .xcodeproj file).
 2. Select your project under the Targets section > Signing & Capabilities > Release.
@@ -52,7 +56,16 @@ Open the Keychain Access application on your Mac, then click on 'Keychain Access
 4. In Provisioning Profile, import the profile file that be generated in the above steps.
 5. If the certificate associated with the profile is already installed on your device you should see it in Signing Certificate also, you should see the team name appear automatically.
 
-### Generate App Store API Key
+### 6) Deploy app to Testflight
+
+Its recommended that you build and upload the first version just to make sure everything works as expected.
+
+1. At the top of Xcode, you need to set your simulator to Any iOS device.
+2. In the top menu, click on Archive under Product.
+3. After the archive is completed, the organizer window will popup, and you’ll be able to Distribute your App.
+
+### 7) Generate App Store API Key
+
 1. Go [here](https://appstoreconnect.apple.com/access/api) to generate a App Store Connect API Key.
 2. Click on the + button.
 3. Give it a name and admin access.
@@ -123,4 +136,4 @@ To get rid of the 'Missing Compliance' warning every time you deploy a build to 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-I created this action after reading a blog post by Youssouf EL Azizi which can be found [here](https://www.obytes.com/blog/react-native-github-action)
+I created this action after reading a blog post by Youssouf EL Azizi which can be found [here](https://www.obytes.com/blog/react-native-github-action). Youssouf also covers how to set it up for Android.
