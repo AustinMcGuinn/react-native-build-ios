@@ -1,6 +1,9 @@
 name: react-native-build-ios
 description: GitHub Action to build React Native iOS app and publish to Testflight
 author: Austin McGuinn
+branding:
+  icon: 'archive'
+  color: 'blue'
 
 # This Action requires some initial project setup which can be found in the README here https://github.com/AustinMcGuinn/react-native-build-ios
 
