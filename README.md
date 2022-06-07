@@ -23,8 +23,8 @@ I also recommend making a folder to save files that we will get creating below.
 Open the Keychain Access application on your Mac, then click on 'Keychain Access' top left to open the drop down, go to 'Certificate Assistant' and click 'Request a Certificate From a Certificate Authority'. Check 'Saved to disk' and click Continue. Save the file.
 
 ### Create Certificate
-1. Go to [your Apple Developer Dashboard](https://developer.apple.com/account/)
-2. Select 'Certificates, IDs & Profiles' from the sidebar
+1. Go to [your Apple Developer Dashboard](https://developer.apple.com/account/).
+2. Select 'Certificates, IDs & Profiles' from the sidebar.
 3. Click on Certificates and then the + button beside Certificates. Select Apple Distribution under Software and then Continue. 
 4. Upload the file we created from 'Get Certificate Request'.
 5. Click the Download button.
