@@ -23,6 +23,37 @@ By using this GitHub Action I already assume you know how to build your React Na
 
 I also recommend making a folder to save files that we will get creating below.
 
+### Setup project for deploying
+First, install np and react-native-version
+```sh
+  yarn add  np react-native-version  -D
+```
+
+Go to your project and add the following script to package.json
+```sh
+  {
+  "name": "AwesomeProject",
+  "version": "0.0.1",
+  "scripts": {
+    "np": "np --no-publish",
+    "postversion": "react-native-version"
+  }
+}
+```
+
+The last step is to add your GitHub repo URL to your package.json file like the following to help np create a preview release in the correct repo.
+```sh
+  "repository": {
+   "type": "git",
+   "url": "git+https://github.com/username/your-repo.git"
+ }
+```
+
+So right now, whenever you feel you need to push a new release, just run:
+```sh
+  yarn np
+```
+
 ### 1) Get Certificate Request
 Open the Keychain Access application on your Mac, then click on 'Keychain Access' top left to open the drop down, go to 'Certificate Assistant' and click 'Request a Certificate From a Certificate Authority'. Check 'Saved to disk' and click Continue. Save the file.
 
