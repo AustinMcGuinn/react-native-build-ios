@@ -7,12 +7,10 @@ branding:
 
 # This Action requires some initial project setup which can be found in the README here https://github.com/AustinMcGuinn/react-native-build-ios
 
-# this workflow will run when someone pushes to main or to a branch that starts with releases/.
 on:
-  push:
-    branches:    
-      - 'main'
-      - 'releases/**'
+  workflow_dispatch:
+  release:
+    types: [published] # only run the workflow when a new release has been published
 
 jobs:
   ios-build:
