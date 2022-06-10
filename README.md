@@ -54,6 +54,8 @@ So right now, whenever you feel you need to push a new release, just run:
   yarn np
 ```
 
+## Installation
+
 ### 1) Get Certificate Request
 Open the Keychain Access application on your Mac, then click on 'Keychain Access' top left to open the drop down, go to 'Certificate Assistant' and click 'Request a Certificate From a Certificate Authority'. Check 'Saved to disk' and click Continue. Save the file.
 
