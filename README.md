@@ -26,7 +26,7 @@ I also recommend making a folder to save files that we will get creating below.
 ### Setup project for deploying
 First, install np and react-native-version
 ```sh
-  yarn add  np react-native-version  -D
+  yarn add np react-native-version -D
 ```
 
 Go to your project and add the following script to package.json
